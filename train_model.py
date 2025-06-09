@@ -107,16 +107,16 @@ for idx, file in enumerate(data_files):
   results_val, results_test, cm_test, models_dicc = run_short_version(est_params_dict, X_train, X_test, y_train, y_test, sample_weight_On = None, SMOTE_on= None, RandomUnderSampler_on = None)
 
   # 5. Mostrar resultados
-  #print("\n🔍 Validación:")
+  #print("\n Validación:")
   #for model, metrics in results_val.items():
   #    print(f"{model}: {metrics}")
 
-  print("\n🧪 Test:")
+  print("\n Test:")
   for model, metrics in results_test.items():
       print(f"{model}: {metrics}")
 
   for model, cm in cm_test.items():
-      print(f"\n🔍 Confusion Matrix for {model}:")
+      print(f"\n Confusion Matrix for {model}:")
       # Crear DataFrame con etiquetas
       cm_df = pd.DataFrame(cm,
                           index=["Actual 0", "Actual 1", "Actual 2"],
