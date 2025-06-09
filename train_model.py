@@ -74,7 +74,7 @@ model_keys = [
     #'DecisionTreeClassifier',
     'RandomForestClassifier',
     #'GradientBoostingClassifier',
-    #'XGBClassifier',
+    'XGBClassifier',
     'MLPClassifier',
     'SVC',
     'SGDClassifier'
