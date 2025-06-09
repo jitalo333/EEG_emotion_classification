@@ -53,8 +53,8 @@ from ml_functions import *
 
 
 #Directories
-data_dir = r"/content/drive/MyDrive/Tesis_code/Adultos/Data/de_mov_avg"
-results_dir = '/content/drive/MyDrive/Tesis_code/Adultos/Results/ML_v3(intra_subject)_avg_DE'
+data_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\de_mov_avg"
+results_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\Results"
 #data_dir = r"C:\Users\Alonso\Desktop\Magister\train_educa\datasets\de_mov_avg"
 #results_dir = r'C:\Users\Alonso\Desktop\Magister\train_educa\Results\ML_v3(intra_subject)_avg_DE'
 
