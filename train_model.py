@@ -53,10 +53,10 @@ from ml_functions import *
 
 
 #Directories
-#data_dir = r"/content/drive/MyDrive/Tesis_code/Adultos/Data/de_mov_avg"
-#results_dir = '/content/drive/MyDrive/Tesis_code/Adultos/Results/ML_v3(intra_subject)_avg_DE'
-data_dir = r"C:\Users\Alonso\Desktop\Magister\train_educa\datasets\de_mov_avg"
-results_dir = r'C:\Users\Alonso\Desktop\Magister\train_educa\Results\ML_v3(intra_subject)_avg_DE'
+data_dir = r"/content/drive/MyDrive/Tesis_code/Adultos/Data/de_mov_avg"
+results_dir = '/content/drive/MyDrive/Tesis_code/Adultos/Results/ML_v3(intra_subject)_avg_DE'
+#data_dir = r"C:\Users\Alonso\Desktop\Magister\train_educa\datasets\de_mov_avg"
+#results_dir = r'C:\Users\Alonso\Desktop\Magister\train_educa\Results\ML_v3(intra_subject)_avg_DE'
 
 os.makedirs(results_dir, exist_ok=True)
 
@@ -72,12 +72,12 @@ labels = label_encoder.fit_transform(labels)
 model_keys = [
     'LogisticRegression',
     #'DecisionTreeClassifier',
-    #'RandomForestClassifier',
+    'RandomForestClassifier',
     #'GradientBoostingClassifier',
     #'XGBClassifier',
-    #'MLPClassifier',
-    #'SVC',
-    #'SGDClassifier'
+    'MLPClassifier',
+    'SVC',
+    'SGDClassifier'
 ]
 
 est_params_dict = get_est_params_dict(model_keys)
