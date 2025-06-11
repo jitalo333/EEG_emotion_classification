@@ -132,6 +132,6 @@ for idx, file in enumerate(data_files):
       'models_dicc': models_dicc
   }
 
-  filename = file.replace(".npz", ".plk")
+  filename = file.replace(".mat", ".plk")
   with open(os.path.join(results_dir, filename), 'wb') as f:
       pickle.dump(session_results, f)
