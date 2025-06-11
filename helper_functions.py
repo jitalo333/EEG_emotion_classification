@@ -1,6 +1,6 @@
 import numpy as np
 from collections import Counter
-
+from scipy.io import loadmat
 
 
 def create_segment_label(value, N):
@@ -34,3 +34,21 @@ def count_labels(y_tensor):
   labels = y_tensor.tolist()
   label_counts = Counter(labels)
   print(label_counts)
+
+
+def Transform_for_compatibility(path, feature = 'de_LDS'):
+  #Read data
+  data = loadmat(path)
+  keys = list(data.keys())
+  de_keys = [k for k in keys if feature in k]
+  #Save data on a list
+  loaded = []
+  for key in de_keys:
+    ses = data[key]
+    #Transpose data
+    ses = np.transpose(ses, (1, 0, 2))
+    #Flatten features
+    ses = ses.reshape(ses.shape[0], -1)
+    loaded.append(ses)
+
+  return loaded

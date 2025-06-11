@@ -53,17 +53,18 @@ from ml_functions import *
 
 
 #Directories
-data_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\de_mov_avg"
-results_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\Results"
-#data_dir = r"C:\Users\Alonso\Desktop\Magister\train_educa\datasets\de_mov_avg"
-#results_dir = r'C:\Users\Alonso\Desktop\Magister\train_educa\Results\ML_v3(intra_subject)_avg_DE'
+#data_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\de_mov_avg"
+#results_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\Results"
+data_dir = r"C:\Users\Alonso\Desktop\Magister\train_educa\datasets\ExtractedFeatures_1s"
+results_dir = r'C:\Users\Alonso\Desktop\Magister\train_educa\Results\ML_v3(intra_subject_chinese_experiment)_avg_DE'
 
 os.makedirs(results_dir, exist_ok=True)
 
 data_files = [
     f for f in os.listdir(data_dir)
-    if os.path.isfile(os.path.join(data_dir, f)) and f.endswith(".npz")
+    if os.path.isfile(os.path.join(data_dir, f)) and f.endswith(".mat")
 ]
+
 
 labels = [1,0,-1,-1,0,1,-1,0,1,1,0,-1,0,1,-1]
 label_encoder = LabelEncoder()
@@ -72,12 +73,12 @@ labels = label_encoder.fit_transform(labels)
 model_keys = [
     'LogisticRegression',
     #'DecisionTreeClassifier',
-    'RandomForestClassifier',
+    #'RandomForestClassifier',
     #'GradientBoostingClassifier',
-    'XGBClassifier',
-    'MLPClassifier',
-    'SVC',
-    'SGDClassifier'
+    #'XGBClassifier',
+    #'MLPClassifier',
+    #'SVC',
+    #'SGDClassifier'
 ]
 
 est_params_dict = get_est_params_dict(model_keys)
@@ -87,11 +88,11 @@ for idx, file in enumerate(data_files):
 
   print(f"Sesion {idx}, {file}")
   path = os.path.join(data_dir, file)
-  loaded = np.load(path, allow_pickle=True)
+  loaded = Transform_for_compatibility(path, feature = 'de_movingAve')
 
-  X_train = loaded['subject_data'][0:9]
+  X_train = loaded[0:9]
   y_train = np.array(labels[0:9])
-  X_test = loaded['subject_data'][9:15]
+  X_test = loaded[9:15]
   y_test = np.array(labels[9:15])
 
   X_train, X_test, y_train, y_test = generate_datasets(X_train, X_test, y_train, y_test)
