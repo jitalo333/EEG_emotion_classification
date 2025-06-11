@@ -53,7 +53,7 @@ from ml_functions import *
 
 
 #Directories
-data_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\ExtractedFeatures_1s"
+data_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\ExtractedFeatures_1s"
 results_dir = r"C:\Users\Alonso_biomed\Desktop\Tesis\ML_v3\DE_movavg\Results"
 #data_dir = r"C:\Users\Alonso\Desktop\Magister\train_educa\datasets\ExtractedFeatures_1s"
 #results_dir = r'C:\Users\Alonso\Desktop\Magister\train_educa\Results\ML_v3(intra_subject_chinese_experiment)_avg_DE'
