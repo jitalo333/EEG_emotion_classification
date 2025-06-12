@@ -38,6 +38,7 @@ def count_labels(y_tensor):
 
 def Transform_for_compatibility(path, feature = 'de_LDS'):
   #Read data
+  print(f"Feature: {feature}")
   data = loadmat(path)
   keys = list(data.keys())
   de_keys = [k for k in keys if feature in k]
