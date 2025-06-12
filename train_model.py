@@ -88,7 +88,7 @@ for idx, file in enumerate(data_files):
 
   print(f"Sesion {idx}, {file}")
   path = os.path.join(data_dir, file)
-  loaded = Transform_for_compatibility(path, feature = 'de_movingAve')
+  loaded = Transform_for_compatibility(path)
 
   X_train = loaded[0:9]
   y_train = np.array(labels[0:9])
